@@ -12,6 +12,8 @@
 		79A0B788218A635D00183D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A0B786218A635D00183D8D /* Main.storyboard */; };
 		79A0B78A218A635F00183D8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A0B789218A635F00183D8D /* Assets.xcassets */; };
 		79A0B78D218A635F00183D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A0B78B218A635F00183D8D /* LaunchScreen.storyboard */; };
+		79A0B795218A8C2A00183D8D /* UDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0B794218A8C2A00183D8D /* UDTableViewCell.swift */; };
+		79A0B799218AC80500183D8D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A0B798218AC80500183D8D /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		79A0B789218A635F00183D8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79A0B78C218A635F00183D8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79A0B78E218A635F00183D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79A0B794218A8C2A00183D8D /* UDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDTableViewCell.swift; sourceTree = "<group>"; };
+		79A0B796218AC67C00183D8D /* ImageDocumentPicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageDocumentPicker.entitlements; sourceTree = "<group>"; };
+		79A0B798218AC80500183D8D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A0B799218AC80500183D8D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				79A0B781218A635D00183D8D /* ImageDocumentPicker */,
 				79A0B780218A635D00183D8D /* Products */,
+				79A0B797218AC80500183D8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,24 @@
 		79A0B781218A635D00183D8D /* ImageDocumentPicker */ = {
 			isa = PBXGroup;
 			children = (
+				79A0B796218AC67C00183D8D /* ImageDocumentPicker.entitlements */,
 				79A0B782218A635D00183D8D /* AppDelegate.swift */,
 				79A0B784218A635D00183D8D /* ViewController.swift */,
+				79A0B794218A8C2A00183D8D /* UDTableViewCell.swift */,
 				79A0B786218A635D00183D8D /* Main.storyboard */,
 				79A0B789218A635F00183D8D /* Assets.xcassets */,
 				79A0B78B218A635F00183D8D /* LaunchScreen.storyboard */,
 				79A0B78E218A635F00183D8D /* Info.plist */,
 			);
 			path = ImageDocumentPicker;
+			sourceTree = "<group>";
+		};
+		79A0B797218AC80500183D8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79A0B798218AC80500183D8D /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +113,17 @@
 				TargetAttributes = {
 					79A0B77E218A635D00183D8D = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A0B785218A635D00183D8D /* ViewController.swift in Sources */,
+				79A0B795218A8C2A00183D8D /* UDTableViewCell.swift in Sources */,
 				79A0B783218A635D00183D8D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +311,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ImageDocumentPicker/ImageDocumentPicker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9K759NQ2U;
 				INFOPLIST_FILE = ImageDocumentPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +331,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ImageDocumentPicker/ImageDocumentPicker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9K759NQ2U;
 				INFOPLIST_FILE = ImageDocumentPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
